@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yönetici Girişi | Ardahan Üniversitesi</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            light: '#eff6ff',
+                            DEFAULT: '#2563eb',
+                            bold: '#1d4ed8',
+                            dark: '#1e3a8a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-brand-light to-gray-100 min-h-screen flex items-center justify-center p-4">
+    
+    <div class="max-w-md w-full bg-white rounded-2xl shadow-xl overflow-hidden">
+        <div class="bg-brand-bold py-6 px-8 text-center">
+            <div class="flex flex-col items-center justify-center">
+                <img src="./logo.jpg" alt="Ardahan Üniversitesi Logo" class="h-20 w-20 mb-3 object-contain bg-white rounded-full p-1 shadow-sm" />
+                <h1 class="text-xl font-bold text-white tracking-wide font-serif">Ardahan Üniversitesi</h1>
+            </div>
+            <p class="text-brand-light mt-1 text-sm opacity-90" id="form-subtitle">Yönetim paneline giriş yapın</p>
+        </div>
+        
+        <div class="p-8">
+            <form id="auth-form" class="space-y-6">
+                <!-- Error messages -->
+                <div id="error-message" class="hidden bg-red-50 text-red-600 text-sm p-3 rounded-lg border border-red-200">
+                    <!-- Error text goes here -->
+                </div>
+
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">E-posta Adresi</label>
+                    <input type="email" id="email" required placeholder="ornek@ardahan.edu.tr" 
+                        class="mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-brand focus:border-brand transition-colors shadow-sm outline-none">
+                </div>
+                
+                <div>
+                    <label for="password" class="block text-sm font-medium text-gray-700">Şifre</label>
+                    <input type="password" id="password" required placeholder="••••••••" 
+                        class="mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-brand focus:border-brand transition-colors shadow-sm outline-none">
+                </div>
+                
+                <button type="submit" id="submit-btn" 
+                    class="w-full bg-brand-bold hover:bg-brand-dark text-white font-semibold py-3 px-4 rounded-lg shadow-md transition-transform transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-bold">
+                    Giriş Yap
+                </button>
+            </form>
+        </div>
+        
+        <div class="px-8 py-5 bg-gray-50 border-t border-gray-100 text-center">
+
+            <p class="text-xs text-gray-500 mt-4"><a href="index.html" class="hover:underline hover:text-gray-700 font-medium">&larr; Ana Sayfaya Dön</a></p>
+        </div>
+    </div>
+
+    <!-- Firebase Authentication Logic -->
+    <script type="module" src="./js/auth.js"></script>
+</body>
+</html>
